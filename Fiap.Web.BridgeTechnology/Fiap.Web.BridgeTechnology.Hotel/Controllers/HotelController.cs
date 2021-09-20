@@ -53,7 +53,7 @@ namespace Fiap.Web.BridgeTechnology.Hotel.Controllers
             return View(hotel);
         }
 
-        [HttpGet]
+        [HttpPost]
         public IActionResult Remover(int id)
         {
             _banco.RemoveAll(p => p.Codigo == id);

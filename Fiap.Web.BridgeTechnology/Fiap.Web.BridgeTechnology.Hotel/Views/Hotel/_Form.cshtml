@@ -1,0 +1,41 @@
+﻿@model Hootel
+
+<div class="form-group">
+    <label asp-for="NomeHotel"></label>
+    <input asp-for="NomeHotel" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label asp-for="Endereco"></label>
+    <input asp-for="Endereco" class="form-control" />
+</div>
+
+<div class="form-group">
+    <input asp-for="Disponivel" />
+    <label asp-for="Disponivel"></label>
+</div>
+
+<div class="form-group">
+    <input asp-for="PrecoDiaria" />
+    <label asp-for="PrecoDiaria"></label>
+</div>
+
+<div class="form-group">
+    <label asp-for="DataInauguracao"></label>
+    <input asp-for="DataInauguracao" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label asp-for="Unidade"></label>
+    <select asp-for="Unidade" class="form-control" asp-items="@ViewBag.unidades">
+        <option>Selecione</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label asp-for="Quarto"></label>
+    <select asp-items="@Html.GetEnumSelectList<Quarto>()"
+            asp-for="Quarto" class="form-control">
+        <option>Selecione</option>
+    </select>
+</div>

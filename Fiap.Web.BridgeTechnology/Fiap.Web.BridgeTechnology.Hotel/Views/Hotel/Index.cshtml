@@ -40,7 +40,12 @@
 
             <td>
                 <a asp-route-id="@item.Codigo" asp-action="editar" class="btn btn-sm btn-primary">Editar</a>
-                <a asp-route-id="@item.Codigo" asp-action="remover" class="btn btn-sm btn-danger">Remover</a>
+                @*<a asp-route-id="@item.Codigo" asp-action="remover" class="btn btn-sm btn-danger">Remover</a>*@
+
+                <button onclick="idHotel.value = @item.Codigo" type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal">
+                    Remover
+                </button>
+
             </td>
         </tr>
     }
@@ -57,11 +62,11 @@
                 </button>
             </div>
             <div class="modal-body">
-                Deseja realmente apagar a padaria?
+                Deseja realmente remover o Hotel?
             </div>
             <div class="modal-footer">
                 <form asp-action="remover">
-                    <input type="hidden" name="id" id="idPadaria" />
+                    <input type="hidden" name="id" id="idHotel" />
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
                     <button type="submit" class="btn btn-danger">Sim</button>
                 </form>

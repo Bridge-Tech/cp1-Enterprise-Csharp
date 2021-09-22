@@ -4,14 +4,16 @@
     ViewData["Title"] = "Cadastrar";
 }
 
+@section Links {
+    <a asp-action="index">Lista de Hotéis</a>
+}
+
 <h1>Cadastro de Hotéis</h1>
 
 <mensagem texto="@TempData["msg"]" class="alert alert-success"></mensagem>
 
 <form asp-action="cadastrar">
-    <partial name="_Form" /> 
-
+    <partial name="_Form" />
     <botao texto="Salvar" class="btn btn-warning"></botao>
     <a asp-action="index" class="btn btn-dark">Hotéis</a>
-
 </form>

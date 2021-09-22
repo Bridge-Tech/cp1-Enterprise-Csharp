@@ -9,7 +9,6 @@ namespace Fiap.Web.BridgeTechnology.Hotel.Controllers
     {
         private static List<Hootel> _banco = new List<Hootel>();
         private static int _gerador = 1;
-
         public IActionResult Index() { return View(_banco); }
 
         [HttpPost]
@@ -18,6 +17,7 @@ namespace Fiap.Web.BridgeTechnology.Hotel.Controllers
             hotel.Codigo = _gerador++;
             _banco.Add(hotel);
             TempData["msg"] = "Hotel registrado!";
+
             return RedirectToAction("cadastrar");
         }
 
@@ -38,7 +38,6 @@ namespace Fiap.Web.BridgeTechnology.Hotel.Controllers
         public IActionResult Editar(Hootel hotel)
         {
             _banco[_banco.FindIndex(p => p.Codigo == hotel.Codigo)] = hotel;
-
             TempData["msg"] = "Hotel atualizado!";
 
             return RedirectToAction("Index");
@@ -48,8 +47,8 @@ namespace Fiap.Web.BridgeTechnology.Hotel.Controllers
         public IActionResult Editar(int id)
         {
             CarregarUnidades();
-
             var hotel = _banco.Find(p => p.Codigo == id);
+
             return View(hotel);
         }
 

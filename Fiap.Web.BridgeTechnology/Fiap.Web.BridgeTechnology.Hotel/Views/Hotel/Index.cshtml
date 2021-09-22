@@ -1,7 +1,7 @@
 ﻿@model List<Hootel>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Lista de Hotéis";
 }
 
 <h1>Hotéis</h1>
@@ -16,12 +16,12 @@
 <a asp-action="cadastrar">Cadastrar</a>
 <table class="table">
     <tr>
-        <th>Codigo</th>
-        <th>NomeHotel</th>
-        <th>Endereco</th>
-        <th>Disponivel</th>
-        <th>PrecoDiaria</th>
-        <th>DataInauguracao</th>
+        <th>Código</th>
+        <th>Hotel</th>
+        <th>Endereço</th>
+        <th>Disponível</th>
+        <th>Diária</th>
+        <th>Inauguração</th>
         <th>Unidade</th>
         <th>Quarto</th>
         <th></th>
@@ -40,12 +40,9 @@
 
             <td>
                 <a asp-route-id="@item.Codigo" asp-action="editar" class="btn btn-sm btn-primary">Editar</a>
-                @*<a asp-route-id="@item.Codigo" asp-action="remover" class="btn btn-sm btn-danger">Remover</a>*@
-
-                <button onclick="idHotel.value = @item.Codigo" type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal">
-                    Remover
+                <button onclick="idHotel.value = @item.Codigo" type="button" class="btn btn-sm btn-danger" 
+                        data-toggle="modal" data-target="#exampleModal"> Remover
                 </button>
-
             </td>
         </tr>
     }
